@@ -107,7 +107,7 @@ const SignUpPage = () => {
 					{errors.name?.message ? (
 						<p className='text-red-500 text-sm'>{errors.name?.message}</p>
 					) : (
-						<p className='text-red-500 invisible text-sm'>''</p>
+						<p className='text-red-500 invisible text-sm'></p>
 					)}
 				</div>
 
@@ -131,7 +131,7 @@ const SignUpPage = () => {
 					{errors.email?.message ? (
 						<p className='text-red-500 text-sm'>{errors.email?.message}</p>
 					) : (
-						<p className='text-red-500 invisible text-sm'>''</p>
+						<p className='text-red-500 invisible text-sm'></p>
 					)}
 				</div>
 
@@ -159,7 +159,7 @@ const SignUpPage = () => {
 					{errors.avatar?.message ? (
 						<p className='text-red-500 text-sm'>{errors.avatar?.message}</p>
 					) : (
-						<p className='text-red-500 invisible text-sm'>''</p>
+						<p className='text-red-500 invisible text-sm'></p>
 					)}
 				</div>
 
@@ -196,7 +196,7 @@ const SignUpPage = () => {
 						{errors.password?.message ? (
 							<p className='text-red-500 text-sm'>{errors.password?.message}</p>
 						) : (
-							<p className='text-red-500 invisible text-sm'>''</p>
+							<p className='text-red-500 invisible text-sm'></p>
 						)}
 					</div>
 				</div>
@@ -216,7 +216,7 @@ const SignUpPage = () => {
 				<p className='text-sm text-gray-500 mt-4 text-center'>
 					Already have an account?{' '}
 					<Link href='/sign-in'>
-						<span className='text-blue-500 underline'>Sign In</span>
+						<span className='text-blue-500 underline ml-2'>Sign In</span>
 					</Link>
 				</p>
 			</form>

@@ -23,7 +23,7 @@ export default function ProductsHero() {
 						</h1>
 						<p className='text-xl text-gray-600 w-full md:max-w-[80%] mb-7'>
 							This year, our new elektronic collection will make you feel like
-							you're in the future.
+							you are in the future.
 						</p>
 					</div>
 					<div>
