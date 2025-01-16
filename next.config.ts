@@ -21,12 +21,7 @@ const nextConfig: NextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'images.unsplash.com',
-				// pathname: '/images/**',
 			},
-			// {
-			// 	protocol: 'https',
-			// 	hostname: 'example.com',
-			// },
 		],
 		localPatterns: [{ pathname: '/app/assets/**', search: 'local' }],
 	},

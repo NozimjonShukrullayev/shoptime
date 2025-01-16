@@ -11,6 +11,8 @@ const openSans = Open_Sans({
 	subsets: ['latin'],
 })
 
+export const favicon = '/assets/simple-phone.svg'
+
 export const metadata: Metadata = {
 	title: 'Shoptime | Your shopping time',
 	description:
@@ -25,6 +27,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
+			<head>
+				<link rel='icon' href='/shoptime-mobile.png' sizes='any' />
+			</head>
 			<body
 				className={`${openSans.variable} antialiased min-h-screen flex flex-col`}
 			>
