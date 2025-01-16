@@ -1,7 +1,48 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'storage.googleapis.com',
+				pathname: '/fir-auth-1c3bc.appspot.com/**',
+			},
+			{
+				protocol: 'https',
+				hostname: 'png.pngtree.com',
+				pathname: '/png-vector/20240202/**',
+			},
+			{
+				protocol: 'https',
+				hostname: 'readymadeui.com',
+				pathname: '/images/**',
+			},
+			{
+				protocol: 'https',
+				hostname: 'images.unsplash.com',
+				// pathname: '/images/**',
+			},
+			// {
+			// 	protocol: 'https',
+			// 	hostname: 'example.com',
+			// },
+		],
+		localPatterns: [{ pathname: '/app/assets/**', search: 'local' }],
+	},
+	async headers() {
+		return [
+			{
+				source: '/readymadeui.com/images',
+				headers: [
+					{
+						key: 'X-Content-Type-Options',
+						value: 'nosniff',
+					},
+				],
+			},
+		]
+	},
+}
 
-export default nextConfig;
+export default nextConfig
