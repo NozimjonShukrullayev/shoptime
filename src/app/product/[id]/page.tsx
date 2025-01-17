@@ -4,13 +4,13 @@ import CustomImage from '@/components/CustomImage'
 import { ProductsType } from '@/interfaces'
 import { FC } from 'react'
 
-interface Props {
+interface PageProps {
 	params: {
 		id: string
 	}
 }
 
-const ProductDetailedPage: FC<Props> = async ({ params }) => {
+const ProductDetailedPage: FC<PageProps> = async ({ params }) => {
 	const { id } = params
 	const res = await fetch(`https://fakestoreapi.in/api/products/${id}`)
 	const data: ProductsType = await res.json()
