@@ -2,15 +2,24 @@ import AdToBagBtn from '@/components/AdToBagBtn'
 import CategoryProducts from '@/components/CategoryProducts'
 import CustomImage from '@/components/CustomImage'
 import { ProductsType } from '@/interfaces'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-// interface PageProps {
-// 	params: {
-// 		id: string
-// 	}
-// }
+type PageProps = {
+	params: {
+		id: string
+	}
+}
 
-async function ProductDetailedPage({ params }: { params: { id: number } }) {
+export async function generateMetadata({
+	params,
+}: PageProps): Promise<Metadata> {
+	return {
+		title: `Product ${params.id}`,
+	}
+}
+
+async function ProductDetailedPage({ params }: PageProps) {
 	try {
 		const { id } = params
 
