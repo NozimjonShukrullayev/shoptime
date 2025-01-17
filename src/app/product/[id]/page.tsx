@@ -4,15 +4,15 @@ import CustomImage from '@/components/CustomImage'
 import { ProductsType } from '@/interfaces'
 import { notFound } from 'next/navigation'
 
-interface PageProps {
-	params: {
-		id: string
-	}
-}
+// interface PageProps {
+// 	params: {
+// 		id: string
+// 	}
+// }
 
-async function ProductDetailedPage({ params }: PageProps) {
+async function ProductDetailedPage({ params }: { params: { id: number } }) {
 	try {
-		const { id } = await params
+		const { id } = params
 
 		const res = await fetch(`https://fakestoreapi.in/api/products/${id}`)
 		const data: ProductsType = await res.json()
