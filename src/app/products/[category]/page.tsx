@@ -7,7 +7,7 @@ interface CategoryPageProps {
 }
 
 const CategoryPage: FC<CategoryPageProps> = async ({ params }) => {
-	const category = params.category
+	const { category } = await params
 
 	const res = await fetch(
 		`https://fakestoreapi.in/api/products/category?type=${category}`

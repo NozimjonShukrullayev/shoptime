@@ -6,13 +6,14 @@ import { notFound } from 'next/navigation'
 
 interface PageProps {
 	params: {
-		id: number
+		id: string
 	}
 }
 
-const ProductDetailedPage = async ({ params }: PageProps) => {
+async function ProductDetailedPage({ params }: PageProps) {
 	try {
-		const { id } = params
+		const { id } = await params
+
 		const res = await fetch(`https://fakestoreapi.in/api/products/${id}`)
 		const data: ProductsType = await res.json()
 		const { product } = data
