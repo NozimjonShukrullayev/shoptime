@@ -89,7 +89,9 @@ const Footer = async () => {
 							{data.categories.map(category => (
 								<li key={category}>
 									<Link
-										onClick={() => window.scrollTo(0, 1)}
+										onClick={() => {
+											window.scrollTo(0, 1)
+										}}
 										href={`/products/${category}`}
 										className='text-gray-600 capitalize mb-1 inline-block hover:text-gray-800'
 									>

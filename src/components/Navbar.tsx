@@ -118,7 +118,9 @@ const Navbar = () => {
 											<div className='flex-auto'>
 												<Link
 													href={`/products/${category.toLowerCase()}`}
-													onClick={() => window.scrollTo(0, 1)}
+													onClick={() => {
+														window.scrollTo(0, 1)
+													}}
 													className='block font-semibold p-4 text-gray-900'
 												>
 													<p className='capitalize text-gray-600'>{category}</p>
