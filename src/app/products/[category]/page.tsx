@@ -1,13 +1,12 @@
 import CategoryProducts from '@/components/CategoryProducts'
 import { ProductsType } from '@/interfaces'
-import { FC } from 'react'
 
-interface CategoryPageProps {
-	params: { category: string }
-}
-
-const CategoryPage: FC<CategoryPageProps> = async ({ params }) => {
-	const { category } = await params
+const CategoryPage = async ({
+	params,
+}: {
+	params: Promise<{ category: string }>
+}) => {
+	const category = (await params).category
 
 	const res = await fetch(
 		`https://fakestoreapi.in/api/products/category?type=${category}`

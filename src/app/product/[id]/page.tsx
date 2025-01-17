@@ -2,26 +2,15 @@ import AdToBagBtn from '@/components/AdToBagBtn'
 import CategoryProducts from '@/components/CategoryProducts'
 import CustomImage from '@/components/CustomImage'
 import { ProductsType } from '@/interfaces'
-import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-type PageProps = {
-	params: {
-		id: string
-	}
-}
-
-export async function generateMetadata({
+async function ProductDetailedPage({
 	params,
-}: PageProps): Promise<Metadata> {
-	return {
-		title: `Product ${params.id}`,
-	}
-}
-
-async function ProductDetailedPage({ params }: PageProps) {
+}: {
+	params: Promise<{ id: string }>
+}) {
 	try {
-		const { id } = params
+		const id = (await params).id
 
 		const res = await fetch(`https://fakestoreapi.in/api/products/${id}`)
 		const data: ProductsType = await res.json()
