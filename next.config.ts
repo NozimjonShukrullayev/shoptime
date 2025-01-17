@@ -25,6 +25,10 @@ const nextConfig: NextConfig = {
 				protocol: 'https',
 				hostname: 'images.unsplash.com',
 			},
+			{
+				protocol: 'https',
+				hostname: 'st2.depositphotos.com',
+			},
 		],
 		localPatterns: [{ pathname: '/app/assets/**', search: 'local' }],
 	},
