@@ -118,6 +118,7 @@ const Navbar = () => {
 											<div className='flex-auto'>
 												<Link
 													href={`/products/${category.toLowerCase()}`}
+													onClick={() => window.scrollTo(0, 1)}
 													className='block font-semibold p-4 text-gray-900'
 												>
 													<p className='capitalize text-gray-600'>{category}</p>
@@ -239,7 +240,10 @@ const Navbar = () => {
 											<Link
 												key={category}
 												href={`/products/${category.toLowerCase()}`}
-												onClick={() => setMobileMenuOpen(false)}
+												onClick={() => {
+													setMobileMenuOpen(false)
+													window.scrollTo(0, 1)
+												}}
 												className='block capitalize rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-gray-900 hover:bg-slate-200'
 											>
 												{category}
